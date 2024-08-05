@@ -12,10 +12,15 @@ public class Tower {
     }
 
     public void unregister(Flyable p_flyable) {
-
+        if ( observers.contains(p_flyable) )  {
+            observers.remove(p_flyable);
+            Logger.log("Tower: flyable " + p_flyable.getId() + " stopped being monitored");
+        }
     }
 
     protected void conditionChanged() {
-        
+        for ( Flyable flyable : observers ) {
+            flyable.updateConditions();
+        }
     }
 }

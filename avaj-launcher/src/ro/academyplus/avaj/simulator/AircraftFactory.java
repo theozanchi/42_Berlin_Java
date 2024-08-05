@@ -2,7 +2,7 @@ public class AircraftFactory {
     private static AircraftFactory  instance;
     private static int              id;
 
-    private AircraftFactory() { id = 0; }
+    private AircraftFactory() { id = 1; }
 
     public static AircraftFactory getInstance() {
         if (instance == null) {
