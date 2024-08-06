@@ -7,14 +7,14 @@ public class Tower {
     public void register(Flyable p_flyable) {
         if ( !observers.contains(p_flyable) ) {
             observers.add(p_flyable);
-            Logger.log("Tower: flyable " + p_flyable.getId() + " is monitored");
+            Logger.log("Tower: " + p_flyable.getName() + " (" + p_flyable.getId() + ") is monitored");
         }
     }
 
     public void unregister(Flyable p_flyable) {
         if ( observers.contains(p_flyable) )  {
             observers.remove(p_flyable);
-            Logger.log("Tower: flyable " + p_flyable.getId() + " stopped being monitored");
+            Logger.log("Tower: " + p_flyable.getName() + " (" + p_flyable.getId() + ") stopped being monitored");
         }
     }
 

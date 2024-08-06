@@ -14,10 +14,11 @@ public class JetPlane extends Aircraft {
         super(p_id, p_name, p_coordinate);
     }
 
+    @Override
     public void updateConditions() {
         String weather = WeatherProvider.getInstance().getCurrentWeather(coordinates);
 
-        Logger.log("Baloon#" + getName() + " (" + getId() + "): " + msgMap.get(weather));
+        Logger.log(getName() + " (" + getId() + "): " + msgMap.get(weather));
         switch (weather) {
             case "SUN":
                 coordinates.updateLongitude(2);
