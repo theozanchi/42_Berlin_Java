@@ -10,7 +10,9 @@ public class Logger {
 
     private Logger() {
         try {
-            writer = new BufferedWriter(new FileWriter("simulation.txt", true));
+            if ( writer == null ) {
+                writer = new BufferedWriter(new FileWriter("simulation.txt", true));
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -23,7 +25,7 @@ public class Logger {
         return (instance);
     }
 
-    public static void log( String msg ) {
+    public void log( String msg ) {
         try {
             writer.write(msg);
             writer.newLine();

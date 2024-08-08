@@ -24,7 +24,7 @@ public abstract class Aircraft extends Flyable {
     public Coordinates  getCoordinates( ) { return (coordinates); }
 
     protected void land( ) {
-        Logger.log(getName() + " (" + getId() + "): landing.");
+        Logger.getInstance().log(getName() + " (" + getId() + "): landing.");
         weatherTower.unregister(this);
     }
 }

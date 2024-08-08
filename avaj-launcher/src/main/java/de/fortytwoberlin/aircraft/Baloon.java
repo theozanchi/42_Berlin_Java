@@ -23,7 +23,7 @@ public class Baloon extends Aircraft {
     public void updateConditions() {
         String weather = WeatherProvider.getInstance().getCurrentWeather(coordinates);
 
-        Logger.log("Baloon #" + getName() + " (" + getId() + "): " + msgMap.get(weather));
+        Logger.getInstance().log("Baloon #" + getName() + " (" + getId() + "): " + msgMap.get(weather));
         switch (weather) {
             case "SUN":
                 coordinates.updateLongitude(2);
@@ -39,5 +39,8 @@ public class Baloon extends Aircraft {
                 coordinates.updateHeight(-15);
                 break;
         }
+        // if ( coordinates.getHeight() <= 0 ) {
+        //     land();
+        // }
     }
 }

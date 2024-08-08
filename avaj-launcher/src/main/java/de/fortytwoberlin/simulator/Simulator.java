@@ -14,7 +14,7 @@ public class Simulator {
     private static WeatherTower     tower;
     private static int              loops;
 
-    private void initSimulation( File file ) throws SimulationException {
+    private static void initSimulation( File file ) throws SimulationException {
         try {
             reader = new BufferedReader(new FileReader(file));
             loops = Integer.parseInt(reader.readLine());
@@ -25,7 +25,7 @@ public class Simulator {
         }
     }
 
-    private void loadFlyables( ) throws SimulationException {
+    private static void loadFlyables( ) throws SimulationException {
         String[] flyableInfos;
         
         try {
@@ -45,7 +45,7 @@ public class Simulator {
         }
     }
 
-    public void main( String[] aStrings ) {
+    public static void main( String[] aStrings ) {
         if ( aStrings.length < 1 ) {
             return;
         }
@@ -59,6 +59,7 @@ public class Simulator {
         }
 
         while ( loops-- > 0 ) {
+            Logger.getInstance().log("Loop #" + loops);
             tower.changeWeather();
         }
     }

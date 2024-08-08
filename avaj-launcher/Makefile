@@ -8,7 +8,10 @@ compile:
 			mkdir -p $(OUT_DIR)
 			javac -d $(OUT_DIR) $(SOURCES)
 
-run:		compile
+reset:
+			rm simulation.txt
+
+run:		reset compile
 			java -cp $(OUT_DIR) $(MAIN_CLASS) scenario.txt
 
 clean:
