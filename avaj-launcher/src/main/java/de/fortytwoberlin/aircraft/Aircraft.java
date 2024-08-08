@@ -1,3 +1,9 @@
+package main.java.de.fortytwoberlin.aircraft;
+
+import main.java.de.fortytwoberlin.flyable.Flyable;
+import main.java.de.fortytwoberlin.coordinates.Coordinates;
+import main.java.de.fortytwoberlin.simulator.Logger;
+
 public abstract class Aircraft extends Flyable {
     protected   long            id;
     protected   String          name;

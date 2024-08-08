@@ -1,4 +1,7 @@
+package main.java.de.fortytwoberlin.weather;
+
 import java.util.Random;
+import main.java.de.fortytwoberlin.coordinates.Coordinates;
 
 public class WeatherProvider {
     private static WeatherProvider  instance;

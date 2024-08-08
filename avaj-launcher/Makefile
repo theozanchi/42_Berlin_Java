@@ -1,5 +1,5 @@
 SOURCES		:= $(shell find src -name "*.java")
-MAIN_CLASS	:= ro.academyplus.avaj.simulator.Simulator
+MAIN_CLASS	:= main.java.de.fortytwoberlin.simulator.Simulator
 OUT_DIR		:= out
 
 all:		compile

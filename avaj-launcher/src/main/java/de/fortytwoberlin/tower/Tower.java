@@ -1,5 +1,9 @@
+package main.java.de.fortytwoberlin.tower;
+
 import java.util.List;
 import java.util.ArrayList;
+import main.java.de.fortytwoberlin.flyable.Flyable;
+import main.java.de.fortytwoberlin.simulator.Logger;
 
 public class Tower {
     private List<Flyable>   observers = new ArrayList<>();

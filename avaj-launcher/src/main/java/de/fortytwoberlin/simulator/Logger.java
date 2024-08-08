@@ -1,3 +1,5 @@
+package main.java.de.fortytwoberlin.simulator;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

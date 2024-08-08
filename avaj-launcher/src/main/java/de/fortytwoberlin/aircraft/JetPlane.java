@@ -1,4 +1,9 @@
+package main.java.de.fortytwoberlin.aircraft;
+
 import java.util.HashMap;
+import main.java.de.fortytwoberlin.coordinates.Coordinates;
+import main.java.de.fortytwoberlin.simulator.Logger;
+import main.java.de.fortytwoberlin.weather.WeatherProvider;
 
 public class JetPlane extends Aircraft {
     private static HashMap<String, String> msgMap = new HashMap<>();
@@ -18,7 +23,7 @@ public class JetPlane extends Aircraft {
     public void updateConditions() {
         String weather = WeatherProvider.getInstance().getCurrentWeather(coordinates);
 
-        Logger.log(getName() + " (" + getId() + "): " + msgMap.get(weather));
+        Logger.log("JetPlane #" + getName() + " (" + getId() + "): " + msgMap.get(weather));
         switch (weather) {
             case "SUN":
                 coordinates.updateLongitude(2);

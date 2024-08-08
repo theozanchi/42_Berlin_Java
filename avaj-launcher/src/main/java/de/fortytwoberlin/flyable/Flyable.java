@@ -1,3 +1,7 @@
+package main.java.de.fortytwoberlin.flyable;
+
+import main.java.de.fortytwoberlin.weather.WeatherTower;
+
 public abstract class Flyable {   
     protected   WeatherTower    weatherTower;
 
