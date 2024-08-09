@@ -23,7 +23,7 @@ public class JetPlane extends Aircraft {
     public void updateConditions() {
         String weather = WeatherProvider.getInstance().getCurrentWeather(coordinates);
 
-        Logger.getInstance().log("JetPlane #" + getName() + " (" + getId() + "): " + msgMap.get(weather));
+        Logger.getInstance().log(this.getClass().getSimpleName() + "#" + getName() + " (" + getId() + "): " + msgMap.get(weather));
         switch (weather) {
             case "SUN":
                 coordinates.updateLongitude(2);
@@ -39,8 +39,8 @@ public class JetPlane extends Aircraft {
                 coordinates.updateHeight(-15);
                 break;
         }
-        // if ( coordinates.getHeight() <= 0 ) {
-        //     land();
-        // }
+        if ( coordinates.getHeight() <= 0 ) {
+            land();
+        }
     }
 }

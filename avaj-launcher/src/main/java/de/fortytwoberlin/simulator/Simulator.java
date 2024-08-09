@@ -59,7 +59,6 @@ public class Simulator {
         }
 
         while ( loops-- > 0 ) {
-            Logger.getInstance().log("Loop #" + loops);
             tower.changeWeather();
         }
     }

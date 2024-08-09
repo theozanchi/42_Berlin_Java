@@ -12,7 +12,7 @@ public class Baloon extends Aircraft {
         msgMap.put("SUN", "Basking in the sun, I shine like a star!");
         msgMap.put("RAIN", "Raindrops make me glisten with a magical charm.");
         msgMap.put("FOG", "Even in the fog, my vibrant colors peek through.");
-        msgMap.put("SNOW", "Snowflakes tickle as they land on my surface.");
+        msgMap.put("SNOW", "Snowflakes tickle as they lay on my surface.");
     }
     
     public Baloon( long p_id, String p_name, Coordinates p_coordinate ) {
@@ -23,7 +23,7 @@ public class Baloon extends Aircraft {
     public void updateConditions() {
         String weather = WeatherProvider.getInstance().getCurrentWeather(coordinates);
 
-        Logger.getInstance().log("Baloon #" + getName() + " (" + getId() + "): " + msgMap.get(weather));
+        Logger.getInstance().log(this.getClass().getSimpleName() + "#" + getName() + " (" + getId() + "): " + msgMap.get(weather));
         switch (weather) {
             case "SUN":
                 coordinates.updateLongitude(2);
@@ -39,8 +39,8 @@ public class Baloon extends Aircraft {
                 coordinates.updateHeight(-15);
                 break;
         }
-        // if ( coordinates.getHeight() <= 0 ) {
-        //     land();
-        // }
+        if ( coordinates.getHeight() <= 0 ) {
+            land();
+        }
     }
 }
