@@ -25,3 +25,43 @@ replay_pid*
 
 # Program outputs
 simulation.txt
+
+# Maven specific files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Eclipse specific files
+*.pydevproject
+.project
+.metadata
+*.bak
+*.tmp
+*.swp
+*~.nib
+.localhistory
+.DS_Store
+.classpath
+.settings/
+.loadpath
+
+# IntelliJ IDEA specific files
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# NetBeans specific files
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code specific files
+.vscode/
