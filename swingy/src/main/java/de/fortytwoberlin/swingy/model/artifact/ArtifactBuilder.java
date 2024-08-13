@@ -11,7 +11,7 @@ public class ArtifactBuilder {
     public void setDefense( int p_defense ) { defense = p_defense; }
     public void setHitPoints( int p_hitPoints ) { hitPoints = p_hitPoints; }
 
-    public Artifact getResult() {
+    public Artifact build() {
         return (new Artifact(type, attack, defense, hitPoints));
     }
 }

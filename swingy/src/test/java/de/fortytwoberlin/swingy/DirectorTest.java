@@ -6,7 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.fortytwoberlin.swingy.model.Director;
+import de.fortytwoberlin.swingy.model.artifact.Artifact;
 import de.fortytwoberlin.swingy.model.artifact.ArtifactBuilder;
+import de.fortytwoberlin.swingy.model.artifact.ArtifactType;
 import de.fortytwoberlin.swingy.model.hero.Hero;
 import de.fortytwoberlin.swingy.model.hero.HeroBuilder;
 import de.fortytwoberlin.swingy.model.hero.HeroType;
@@ -30,12 +32,53 @@ public class DirectorTest {
     }
 
     @Test
-    public void testConstructHero() {
+    public void testConstructHighHeels() {
+        director.constructHighHeels(artifactBuilder);
+        Artifact artifact = artifactBuilder.build();
+
+        assertEquals(ArtifactType.HIGH_HEELS, artifact.getType());
+        assertEquals(10, artifact.getAttack());
+    }
+
+    @Test
+    public void testConstructButtPlug() {
+        director.constructButtPlug(artifactBuilder);
+        Artifact artifact = artifactBuilder.build();
+
+        assertEquals(ArtifactType.BUTT_PLUG, artifact.getType());
+        assertEquals(10, artifact.getDefense());
+    }
+
+    @Test
+    public void testConstructHousePlant() {
+        director.constructHousePlant(artifactBuilder);
+        Artifact artifact = artifactBuilder.build();
+
+        assertEquals(ArtifactType.HOUSE_PLANT, artifact.getType());
+        assertEquals(10, artifact.getHitPoints());
+    }
+
+    @Test
+    public void testConstructOtter() {
         director.constructOtter(heroBuilder, "OtterName");
         Hero hero = heroBuilder.build();
 
         assertEquals(HeroType.OTTER, hero.getType());
-        assertEquals("HeroName", hero.getName());
+        assertEquals("OtterName", hero.getName());
+        assertEquals(1, hero.getLevel());
+        assertEquals(0, hero.getExperience());
+        assertEquals(5, hero.getAttack());
+        assertEquals(5, hero.getDefense());
+        assertEquals(5, hero.getHitPoints());
+    }
+
+    @Test
+    public void testConstructTwink() {
+        director.constructTwink(heroBuilder, "TwinkName");
+        Hero hero = heroBuilder.build();
+
+        assertEquals(HeroType.TWINK, hero.getType());
+        assertEquals("TwinkName", hero.getName());
         assertEquals(1, hero.getLevel());
         assertEquals(0, hero.getExperience());
         assertEquals(9, hero.getAttack());

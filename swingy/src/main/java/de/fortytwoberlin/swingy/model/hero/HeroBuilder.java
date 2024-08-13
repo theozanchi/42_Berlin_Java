@@ -17,7 +17,7 @@ public class HeroBuilder {
     public void setDefense( int p_defense ) { defense = p_defense; }
     public void setHitPoints( int p_hitPoints ) { hitPoints = p_hitPoints; }
 
-    public Hero getResult() {
+    public Hero build() {
         return (new Hero(type, name, level, experience, attack, defense, hitPoints));
     }
 

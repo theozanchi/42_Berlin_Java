@@ -11,7 +11,7 @@ public class VillainBuilder {
     public void setDefense( int p_defense ) { defense = p_defense; }
     public void setHitPoints( int p_hitPoints ) { hitPoints = p_hitPoints; }
 
-    public Villain getResult() {
+    public Villain build() {
         return (new Villain(type, attack, defense, hitPoints));
     }
 }
