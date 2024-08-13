@@ -1,13 +1,34 @@
 package de.fortytwoberlin.swingy.model.hero;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class Hero {
-    private final   HeroType    type;
-    private final   String      name;
-    private         int         level;
-    private         int         experience;
-    private         int         attack;
-    private         int         defense;
-    private         int         hitPoints;
+    @NotNull
+    private final HeroType type;
+
+    @NotNull
+    private final String name;
+
+    @NotNull
+    @Size(min = 1, max = 10)
+    private int level;
+
+    @NotNull
+    @Size(min = 0, max = 10)
+    private int experience;
+
+    @NotNull
+    @Size(min = 1, max = 10)
+    private int attack;
+
+    @NotNull
+    @Size(min = 1, max = 10)
+    private int defense;
+
+    @NotNull
+    @Size(min = 1, max = 5)
+    private int hitPoints;
 
     public Hero( HeroType p_type, String p_name, int p_level, int p_experience,
                     int p_attack, int p_defense, int p_hitPoints ) {

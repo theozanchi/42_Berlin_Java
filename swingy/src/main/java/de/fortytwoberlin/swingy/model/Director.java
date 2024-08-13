@@ -62,14 +62,14 @@ public class Director {
 
     public void constructFudamentalistChristian( VillainBuilder builder ) {
         builder.setType(VillainType.FUNDAMENTALIST_CHRISTIAN);
-        builder.setAttack(2);
+        builder.setAttack(2); //Should have light attack but repetitive
         builder.setDefense(3);
         builder.setHitPoints(8);
     }
 
     public void constructCountrysideRelative( VillainBuilder builder ) {
-        builder.setType(VillainType.COUNTRYSIDE_RELATIVE);
-        builder.setAttack(7);
+        builder.setType(VillainType.COUNTRYSIDE_RELATIVE); //Should bring emotional damage, makes the gameplay slow
+        builder.setAttack(7); 
         builder.setDefense(2);
         builder.setHitPoints(4);
     }
