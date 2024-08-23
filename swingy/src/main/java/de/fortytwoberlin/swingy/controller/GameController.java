@@ -13,6 +13,7 @@ public class GameController {
     }
 
     public void startGame( ) {
-        view.displayHome();
+        view.displayWelcomeScreen();
+        // view.displayHome();
     }
 }
