@@ -91,6 +91,7 @@ public class ConsoleView implements GameView {
 
     private void clearScreen() {
         terminal.puts(org.jline.utils.InfoCmp.Capability.clear_screen);
+        terminal.writer().print("\033[3J"); // clearing the scroll back buffer
         terminal.flush();
     }
 
