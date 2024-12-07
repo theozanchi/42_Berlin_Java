@@ -8,4 +8,8 @@ public class GUIView implements GameView {
 	public void displayWelcomeScreen( ) {
         return;
     }
+
+    public void displayPlayerSelection( ) {
+        return;
+    }
 }

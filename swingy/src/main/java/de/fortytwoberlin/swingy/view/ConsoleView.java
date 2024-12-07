@@ -68,13 +68,23 @@ public class ConsoleView implements GameView {
             String input;
             do {
                 input = reader.readLine("> ");
+                switch (input) {
+                    case "start":
+                        displayPlayerSelection();
+                        break;
+                    case "exit":
+                        displayCenteredLine("Goodbye!");
+                        return;
+                    default:
+                        break;
+                }
             } while (!"start".equalsIgnoreCase(input.trim()) && !"exit".equalsIgnoreCase(input.trim()));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void displayHome() {
+    public void displayPlayerSelection() {
         clearScreen();
         displayCenteredText("Choose your character");
         initReader("New character", "Select old character");
