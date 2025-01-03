@@ -1,6 +1,7 @@
 package de.fortytwoberlin.swingy;
 
 import de.fortytwoberlin.swingy.model.game.Game;
+import de.fortytwoberlin.swingy.model.hero.Hero;
 import de.fortytwoberlin.swingy.view.GameView;
 import de.fortytwoberlin.swingy.view.ConsoleView;
 import de.fortytwoberlin.swingy.view.GUIView;
@@ -14,6 +15,7 @@ public class App {
         GameView        view;
         Game            game;
         GameController  controller;
+        Hero            heroModel;
 
         System.out.println("Classpath: " + System.getProperty("java.class.path"));
 
